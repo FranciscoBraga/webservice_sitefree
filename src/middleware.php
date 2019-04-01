@@ -1,6 +1,16 @@
 <?php
 
 // Application middleware
+//
+$app->add(new Tuupola\Middleware\JwtAuthentication([
+    "header" => "X-Token",
+    "regexp" => "/(.*)/",
+    "path" => "/api",
+    "ignore" => ["/api/token"],
+    "secret" => $container->get('settings')['secretKey']
+]));
+
+//cors
 $app->add(function ($req, $res, $next) {
     $response = $next($req, $res);
     return $response

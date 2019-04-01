@@ -27,5 +27,8 @@ return [
             'collation'=> 'utf8_unicode_ci',
             'prefix'   => '',
         ],
+
+        //Secrets
+        'secretKey' => '1458e1438d4caf9fad3b131ca0337d78d3ab48ee',
     ],
 ];

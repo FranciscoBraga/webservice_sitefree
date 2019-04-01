@@ -17,10 +17,12 @@ require __DIR__ . '/src/dependencies.php';
 $db = $container->get('db');
 var_dump($db);
 $schema = $db->schema();
-$tabela = 'sites';
+//$tabela = 'sites';
+$tabela = 'users';
 
 
-$schema->dropIfExists($tabela);
+
+/* $schema->dropIfExists($tabela);
 
 //cria tabela
 $schema->create($tabela, function($table){
@@ -38,6 +40,7 @@ $schema->create($tabela, function($table){
 
 });
 
+
 $db->table($tabela)->insert([
    
     'name'  =>'site 1',
@@ -49,6 +52,24 @@ $db->table($tabela)->insert([
     'final' => true,
     'created_at' => '2019-1-23',
     'updated_at' => '2019-1-23'
+]); */
+
+$schema->dropIfExists($tabela);
+
+$schema->create($tabela , function($table){
+    $table->increments('id');
+    $table->string('name', 150);
+    $table->string('email',200);
+    $table->string('password',32);
+    $table->timestamps();
+
+});
+
+$db->table($tabela)->insert([
+
+    'name'=> "Francisco",
+    'email' => 'ico@ico.com',
+    'password'=> md5('123456'),
+    'created_at' => '2019-1-23',
+    'updated_at' => '2019-1-23'
 ]);
-
-
