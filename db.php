@@ -47,8 +47,8 @@ $db->table($tabela)->insert([
     'gitPath'   =>'site 1',
     'sitePath'  =>'site 1',
     'final' => true,
-    'created_at' => date(),
-    'updated_at' => date()
+    'created_at' => '2019-1-23',
+    'updated_at' => '2019-1-23'
 ]);
 
 
