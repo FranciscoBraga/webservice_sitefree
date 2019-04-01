@@ -32,8 +32,9 @@ $schema->create($tabela, function($table){
     $table->string('pathImage', 200);
     $table->string('gitPath', 200);
     $table->string('sitePath', 200);
-    $table->date('subscription') ;
     $table->boolean('final');
+    $table->timestamps();
+
 
 });
 
@@ -45,8 +46,9 @@ $db->table($tabela)->insert([
     'pathImage' =>'img.jpg',
     'gitPath'   =>'site 1',
     'sitePath'  =>'site 1',
-    'subscription'  =>'site 1',
-    'final' => true
+    'final' => true,
+    'created_at' => date(),
+    'updated_at' => date()
 ]);
 
 
