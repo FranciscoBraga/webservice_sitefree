@@ -6,6 +6,11 @@ use App\Models\User;
 use \Firebase\JWT\JWT;
 
 //
+$app->get('/api/login', function($request, $response){
+    
+    return $this->renderer->render($response,'login.phtml');
+});
+
 $app->post('/api/token', function($request, $response){
 
     $dados  = $request->getParsedBody();

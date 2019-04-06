@@ -6,7 +6,7 @@ $app->add(new Tuupola\Middleware\JwtAuthentication([
     "header" => "X-Token",
     "regexp" => "/(.*)/",
     "path" => "/api",
-    "ignore" => ["/api/token"],
+    "ignore" => ["/api","/api/token",'/api/v1/sites/lista'],
     "secret" => $container->get('settings')['secretKey']
 ]));
 

@@ -10,6 +10,7 @@ $app->options('/{routes:.+}', function ($request, $response, $args) {
 // Routes
 require __DIR__. '/routes/autenticacao.php';
 require __DIR__. '/routes/sites.php';
+require __DIR__. '/routes/principal.php';
 
 // Catch-all route to serve a 404 Not Found page if none of the routes match
 // NOTE: make sure this route is defined last

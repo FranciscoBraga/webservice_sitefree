@@ -18,11 +18,16 @@ $db = $container->get('db');
 var_dump($db);
 $schema = $db->schema();
 //$tabela = 'sites';
-$tabela = 'users';
+$tabela = 'sites';
 
+//criando coluna e  referenciando-a
+$schema->table($tabela, function($table)
+{
+    $table->integer('id_user')->unsigned();
+    $table->foreign('id_user')->references('id')->on('users');
+});
 
-
-/* $schema->dropIfExists($tabela);
+ /* $schema->dropIfExists($tabela);
 
 //cria tabela
 $schema->create($tabela, function($table){
@@ -52,7 +57,7 @@ $db->table($tabela)->insert([
     'final' => true,
     'created_at' => '2019-1-23',
     'updated_at' => '2019-1-23'
-]); */
+]); 
 
 $schema->dropIfExists($tabela);
 
@@ -72,4 +77,4 @@ $db->table($tabela)->insert([
     'password'=> md5('123456'),
     'created_at' => '2019-1-23',
     'updated_at' => '2019-1-23'
-]);
+]); */

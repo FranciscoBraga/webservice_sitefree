@@ -9,7 +9,9 @@ $app->group('/api/v1', function(){
 
     $this->get('/sites/lista', function($request, $response){
             $sites = Site::get();
-            return $response->withJson( $sites);
+           
+           // return $response->withJson( $sites);
+           return $this->renderer->render($response, 'index.phtml');
     });
 
     //adicionado site 
