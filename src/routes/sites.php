@@ -11,7 +11,7 @@ $app->group('/api/v1', function(){
             $sites = Site::get();
            
            // return $response->withJson( $sites);
-           return $this->renderer->render($response, 'index.phtml');
+           return $this->renderer->render($response, 'lista.phtml');
     });
 
     //adicionado site 
