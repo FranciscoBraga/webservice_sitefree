@@ -28,10 +28,9 @@ $app->post('/api/token', function($request, $response){
         $chaveAcesso = JWT::encode($user, $secretKey);
 
         $sites = Site::get();
-       
-        print_r($sites);
-       // return $response->withJson( $sites);
-       //return $this->renderer->render($response, 'lista.phtml',$response->withJson( $sites));
+   
+     
+       return $this->renderer->render($response, 'lista.phtml',['value' => $response->withJson( $sites)]);
 
         
         // $response->withJSON([

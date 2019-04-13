@@ -1,2 +1,45 @@
 
 <h1>Lista</h1>
+
+<?php
+
+// echo $value;
+// echo $s = json_decode($value);
+$arr = [
+    ['id'=>1],
+    ['id'=>2],
+    ['id'=>3]
+];
+$sub = substr($value,65);
+echo $sub;
+//  $v1 = substr_replace($sub,']',-2);
+// echo '<br>';
+// echo $v2 = substr_replace($v1,'[',0,0);
+// echo $explode = str_replace($v2, ':', '=>');
+
+// echo '<br>';
+// foreach($arr as $key){
+//     echo $key['id'];
+// }
+?>
+
+<h1>?</h1>
+<h4></h4>
+<p></p>
+<a href=""></a>
+<img src="#" alt="">
+
+
+<script>
+ var j = <?=$sub?>;
+ console.log(j);
+ 
+ document.getElementsByTagName("H1")[1].innerHTML  = j[0].name;
+ document.getElementsByTagName("P")[0].innerHTML = j[0].description;
+ document.getElementsByTagName("A")[0].innerHTML = j[0].sitePath
+ document.getElementsByTagName("A")[0].href=j[0].sitePath
+ document.getElementsByTagName("IMG").src = j[0].pathImage
+ document.getElementsByTagName("H4")[0].innerHTML = j[0].title
+
+ 
+ </script>
